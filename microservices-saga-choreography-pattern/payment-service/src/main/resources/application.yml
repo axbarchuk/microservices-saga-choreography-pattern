@@ -1,1 +1,29 @@
+server:
+  port: 8002
 
+spring:
+  cloud:
+    stream:
+      function:
+        definition: orderPurchaseEventProcessor;paymentEventSubscriber
+      bindings:
+        orderPurchaseEventProcessor-in-0:
+          destination: orders
+        orderPurchaseEventProcessor-out-0:
+          destination: payments
+        paymentEventSubscriber-in-0:
+          destination: payments
+        paymentEventSubscriber-out-0:
+          destination: transactions
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
+    generate-ddl: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test_saga_payment_db
+    maximum-pool-size: 100
+    username: postgres
+    password: postgres

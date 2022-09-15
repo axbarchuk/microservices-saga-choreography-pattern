@@ -1,4 +1,4 @@
-package ax.barchuk.order.saga
+package ax.barchuk.common.saga
 
 interface SagaEvent {
     fun getEvent(): String

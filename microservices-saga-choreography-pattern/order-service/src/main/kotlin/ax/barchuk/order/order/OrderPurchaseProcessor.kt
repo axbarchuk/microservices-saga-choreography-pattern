@@ -1,6 +1,7 @@
 package ax.barchuk.order.order
 
-import ax.barchuk.order.saga.SagaProcessor
+import ax.barchuk.common.order.OrderPurchaseEvent
+import ax.barchuk.common.saga.SagaProcessor
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Sinks
 

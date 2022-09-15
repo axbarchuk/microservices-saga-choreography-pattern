@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.13.RELEASE"
     kotlin("jvm") version "1.7.10"
     kotlin("plugin.spring") version "1.6.21"
+    kotlin("plugin.jpa") version "1.6.21"
 }
 
 group = "ax.barchuk"
@@ -15,16 +16,37 @@ repositories {
     mavenCentral()
 }
 
+extra["springCloudVersion"] = "2021.0.4"
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.springframework.cloud:spring-cloud-stream")
+    implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka")
+    implementation("org.springframework.kafka:spring-kafka")
+
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    runtimeOnly("org.postgresql:postgresql")
+
+    compileOnly(project(":common"))
+
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.kafka:spring-kafka-test")
     testImplementation("io.projectreactor:reactor-test")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+    }
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,6 +1,6 @@
-package ax.barchuk.order.transaction
+package ax.barchuk.common.transaction
 
-import ax.barchuk.order.saga.SagaEvent
+import ax.barchuk.common.saga.SagaEvent
 
 class TransactionEvent(
     val orderId: Long,
@@ -11,9 +11,4 @@ class TransactionEvent(
     }
 
     override fun getEvent() = EVENT
-}
-
-enum class TransactionStatus {
-    SUCCESSFUL,
-    UNSUCCESSFUL
 }

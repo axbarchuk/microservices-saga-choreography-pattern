@@ -1,8 +1,8 @@
 package ax.barchuk.order.config
 
-import ax.barchuk.order.saga.SagaEventConsumer
-import ax.barchuk.order.order.OrderPurchaseEvent
-import ax.barchuk.order.transaction.TransactionEvent
+import ax.barchuk.common.order.OrderPurchaseEvent
+import ax.barchuk.common.saga.SagaEventConsumer
+import ax.barchuk.common.transaction.TransactionEvent
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import reactor.core.publisher.Flux;

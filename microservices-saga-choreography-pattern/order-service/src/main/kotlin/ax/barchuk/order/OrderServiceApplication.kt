@@ -5,8 +5,8 @@ import org.springframework.boot.runApplication
 
 
 @SpringBootApplication
-class InventoryServiceApplication
+class OrderServiceApplication
 
 fun main(args: Array<String>) {
-    runApplication<InventoryServiceApplication>(*args)
+    runApplication<OrderServiceApplication>(*args)
 }

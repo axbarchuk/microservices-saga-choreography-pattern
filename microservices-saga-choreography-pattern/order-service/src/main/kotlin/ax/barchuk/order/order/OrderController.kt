@@ -19,7 +19,7 @@ class OrderController(val orderService: OrderService) {
         return orderService.create(order)
     }
 
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     fun get(@PathVariable id: Long): Mono<OrderPurchase> {
         return orderService.getById(id)
     }

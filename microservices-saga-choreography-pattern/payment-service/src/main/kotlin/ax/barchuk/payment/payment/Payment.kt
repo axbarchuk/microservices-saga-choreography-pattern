@@ -1,15 +1,16 @@
-package ax.barchuk.order.product
+package ax.barchuk.payment.payment
 
+import java.math.BigDecimal
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "products")
-data class Product(
+@Table(name = "payments")
+data class Payment(
     @Id
     @GeneratedValue
     val id: Long,
-    val price: Float
+    val amount: BigDecimal
 )

@@ -1,4 +1,4 @@
-package ax.barchuk.order.product
+package ax.barchuk.payment.user
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -6,10 +6,10 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
-@Table(name = "products")
-data class Product(
+@Table(name = "users")
+data class User(
     @Id
     @GeneratedValue
     val id: Long,
-    val price: Float
+    var balance: Float
 )

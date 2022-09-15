@@ -1,8 +1,10 @@
 package ax.barchuk.order.transaction
 
-import ax.barchuk.order.saga.SagaEventConsumer
+import ax.barchuk.common.order.OrderStatus
+import ax.barchuk.common.saga.SagaEventConsumer
+import ax.barchuk.common.transaction.TransactionEvent
+import ax.barchuk.common.transaction.TransactionStatus
 import ax.barchuk.order.order.OrderPurchaseRepository
-import ax.barchuk.order.order.OrderStatus
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Mono
 import reactor.core.scheduler.Scheduler;
