@@ -1,11 +1,12 @@
-package ax.barchuk.paymentservice
+package ax.barchuk.order
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
+
 @SpringBootApplication
-class PaymentServiceApplication
+class InventoryServiceApplication
 
 fun main(args: Array<String>) {
-    runApplication<PaymentServiceApplication>(*args)
+    runApplication<InventoryServiceApplication>(*args)
 }

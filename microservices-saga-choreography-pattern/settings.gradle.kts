@@ -1,5 +1,5 @@
 
-rootProject.name = "microservices-saga-choreography-pattern"
+rootProject.name = "root"
 include("common")
 include("payment-service")
-include("inventory-service")
+include("order-service")
